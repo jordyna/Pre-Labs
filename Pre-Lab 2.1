@@ -1,0 +1,36 @@
+
+public class Book {
+
+	private String name;
+	
+	public Book(String title) {
+		name = title;
+	}
+
+	
+	
+	@Override
+	public boolean equals(Object other)
+	{
+		if (other == this){
+			return true;
+		}
+		if (other == null)
+		{
+			return false;
+		}
+		//Check the classes to make sure that they can be compared
+		
+		if (this.getClass() == other.getClass())
+		{
+			Book diff = (Book) other;
+			return name.equals(diff.name);
+			
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+}
